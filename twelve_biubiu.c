@@ -18,10 +18,10 @@ int main() {
     set_curve(CURVE_NATURAL); // 自然曲线耗费燃料最少
     for (int i :range(0, 12, 1)) {
         engine_start();
-        wait_engine(ENGINE_STATE_CHAGNE);
+        wait_engine(ENGINE_STATE_CHANGE);
         sleep(2000);
         engin_stop();
-        wait_engine(ENGINE_STATE_CHAGNE);
+        wait_engine(ENGINE_STATE_CHANGE);
         sleep(4000); // 这个时长在模拟器里听起来更像心跳
     }
     return 0;
