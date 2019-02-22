@@ -7,14 +7,19 @@
 
 #env "planet_engine"
 
+#include "twelve_biubiu.h"
+#include "engine_rt.h"
+#include "engine_macros.h"
+
 int init() {
-    set_engine_number_mask(ENGINE_ALL);
+    set_engine_number_mask(ENGINE_EQUATOR_ALL);
     set_funeral_level(FUNERAL_FULL);
-    // 允许误差10秒以内
-    if (unix_time() < make_unix_time(2082, 1, 28, 23, 59, 60-10)) return ERR_ENGIN_ENV;
-    return engine_check_init(); // after compile and before real run
 }
-int main() {
+
+int processing(int32_t engineStatus) {
+    if(ENGINE_FAIL(engineStatus)) {
+        return engineStatus;
+    }
     set_curve(CURVE_NATURAL); // 自然曲线耗费燃料最少
     for (int i :range(0, 12, 1)) {
         engine_start();
@@ -26,6 +31,8 @@ int main() {
     }
     return 0;
 }
-int final() {
+
+int final(int32_t lastError) {
     engine_ensure_shutdown();
+    return lastError;
 }
