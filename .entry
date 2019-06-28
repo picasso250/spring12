@@ -1,0 +1,1 @@
+BUILD_SYSTEM_ENTRY_DIR = "./booting.c"
