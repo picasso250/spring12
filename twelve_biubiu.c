@@ -16,7 +16,7 @@ int init() {
 }
 int main() {
     set_curve(CURVE_NATURAL); // 自然曲线耗费燃料最少
-    for (int i :range(0, 12, 1)) {
+    for (int i = 0; i < 12; i++) {
         engine_start();
         wait_engine(ENGINE_STATE_CHANGE);
         sleep(2000);
