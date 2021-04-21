@@ -9,7 +9,7 @@
 
 int init() {
     set_engine_number_mask(ENGINE_ALL);
-    set_funeral_level(FUNERAL_FULL);
+    set_fuel_level(FUEL_FULL);
     // 允许误差10秒以内
     if (unix_time() < make_unix_time(2082, 1, 28, 23, 59, 60-10)) return ERR_ENGIN_ENV;
     return engine_check_init(); // after compile and before real run
