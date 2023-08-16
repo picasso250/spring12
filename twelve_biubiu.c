@@ -14,9 +14,10 @@ int init() {
     if (unix_time() < make_unix_time(2082, 1, 28, 23, 59, 60-10)) return ERR_ENGIN_ENV;
     return engine_check_init(); // after compile and before real run
 }
+
 int main() {
     set_curve(CURVE_NATURAL); // 自然曲线耗费燃料最少
-    for (int i = 0, 12, 1) {
+    for (int i = 0; i < 12; i++) {
         engine_start();
         wait_engine(ENGINE_STATE_CHANGE);
         sleep(2000);
@@ -26,6 +27,7 @@ int main() {
     }
     return 0;
 }
+
 int final() {
-    engine_ensure_shutdown();
+    return engine_ensure_shutdown();
 }
