@@ -1,0 +1,20 @@
+{
+  "name": "spring12-simulator",
+  "version": "1.0.0",
+  "description": "流浪地球春节十二响模拟器 - 基于李一一的原始代码",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "threejs",
+    "wandering-earth",
+    "simulator",
+    "spring-festival"
+  ],
+  "author": "Based on Li.YiYi's original code",
+  "license": "CN-2082-2",
+  "dependencies": {},
+  "devDependencies": {}
+}
