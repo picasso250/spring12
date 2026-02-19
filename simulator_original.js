@@ -269,9 +269,9 @@ class OriginalModelSpring12Simulator {
         
         const centerGeometry = new THREE.SphereGeometry(3, 16, 16);
         const centerMaterial = new THREE.MeshBasicMaterial({ color: 0x4ecdc4 });
-        const center = new THREE.Mesh(centerGeometry, centerMaterial);
-        center.position.set(0, 15, 0);
-        this.scene.add(center);
+        const centerSphere = new THREE.Mesh(centerGeometry, centerMaterial);
+        centerSphere.position.set(0, 15, 0);
+        this.scene.add(centerSphere);
     }
 
     createMinimalUI() {
