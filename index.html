@@ -152,31 +152,11 @@
             }
         }
         
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle 3s infinite;
-        }
-        
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
-        }
+
     </style>
 </head>
 <body>
-    <div class="stars" id="stars"></div>
+
     
     <div class="instructions">
         <h3>行星发动机模拟器</h3>
@@ -228,36 +208,13 @@
     }
     </script>
     
-    <script type="module" src="simulator.js"></script>
+    <script type="module" src="simulator_minimal.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            createStars();
             setupFullscreen();
             startPerformanceMonitor();
         });
-        
-        function createStars() {
-            const starsContainer = document.getElementById('stars');
-            const starCount = 150;
-            
-            for (let i = 0; i < starCount; i++) {
-                const star = document.createElement('div');
-                star.className = 'star';
-                
-                const size = Math.random() * 2 + 0.5;
-                star.style.width = `${size}px`;
-                star.style.height = `${size}px`;
-                
-                star.style.left = `${Math.random() * 100}%`;
-                star.style.top = `${Math.random() * 100}%`;
-                
-                star.style.animationDelay = `${Math.random() * 3}s`;
-                star.style.animationDuration = `${Math.random() * 2 + 2}s`;
-                
-                starsContainer.appendChild(star);
-            }
-        }
         
         function setupFullscreen() {
             const fullscreenBtn = document.getElementById('fullscreen-btn');
